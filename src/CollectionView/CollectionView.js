@@ -5,7 +5,7 @@ import './CollectionView.css';
 function renderCollection() {
 	let collectionIdentifier = this.relativePathName.split("/")[2];
 	let targetCollection = collections.filter(function(x){
-			return x.search === collectionIdentifier;
+			return x.url === collectionIdentifier;
 		})
 	return targetCollection.map((collection, index) =>
 		<div className="collection-container" key={index}>
