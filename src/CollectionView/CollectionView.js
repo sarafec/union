@@ -3,7 +3,7 @@ import collections from '../data.json';
 import './CollectionView.css';
 
 function renderCollection() {
-	let collectionIdentifier = this.relativePathName.split("/")[2];
+	let collectionIdentifier = this.relativePathName.split("/")[3];
 	let targetCollection = collections.filter(function(x){
 			return x.url === collectionIdentifier;
 		})
