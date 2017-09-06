@@ -26,9 +26,9 @@ function renderCollection() {
 }
 
 function identifyCollection(){
-	let collectionIdentifier = this.relativePathName.split("/")[2];
+	let collectionIdentifier = this.relativePathName.split("/")[3];
 	let targetCollection = collections.filter(function(x){
-			return x.search === collectionIdentifier;
+			return x.url === collectionIdentifier;
 	})
 
 	this.setState({
