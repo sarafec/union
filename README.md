@@ -1,3 +1,3 @@
 ### Union
   
-This project was build using React and JavaScript.
+This project was built using React and JavaScript.
