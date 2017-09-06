@@ -8,9 +8,8 @@ import CollectionView from './CollectionView/CollectionView';
 const Main = () => (
 	<main>
 	<Switch>
-		<Route exact path='/' component={IconView} />
-		<Route path='/search' component={IconView} />
-		<Route path='/collection' component={CollectionView} />
+		<Route exact path='/union/' component={IconView} />
+		<Route path='/union//collection' component={CollectionView} />
 	</Switch>
 	</main>
 )
