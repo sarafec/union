@@ -1,0 +1,86 @@
+.collection-container {
+	width: 100%;
+}
+
+.collection-photo-viewer{
+	height: 350px;
+	padding-bottom: 10px;
+	background-color: white;
+	border-bottom: .1px solid lightgrey;
+	box-shadow: 0px 3px 15px rgba(0,0,0,0.05);
+}
+
+.left-arrow-container {
+	height: 100%;
+	float: left;
+	margin-left: 5px;
+	display: inline-block;
+}
+.right-arrow-container {
+	height: 100%;
+	float: right;
+	margin-right: 5px;
+	display: inline-block;
+}
+
+.right-arrow:focus {
+	outline-color: grey;
+	padding: 0px 2px;
+}
+
+.left-arrow:focus {
+	outline-color: grey;
+	padding: 0px 2px;
+}
+
+
+.left-arrow {
+	font-size: 40px;
+	margin-top: -40px;
+	color: lightgrey;
+	cursor: pointer;
+}
+
+.left-arrow:hover {
+	color: darkgrey;
+}
+
+.right-arrow {
+	font-size: 40px;
+	margin-top: -40px;
+	color: lightgrey;
+	cursor: pointer;
+}
+
+.right-arrow:hover {
+	color: darkgrey;
+}
+
+.collection-counter {
+	float: right;
+	margin-right: 20px;
+	margin-top: -5px;
+}
+
+.collection-photo {
+	display: block;
+	margin: 0 auto;
+	max-height: 330px;
+	max-width: 100%;
+	padding-top: 10px;
+}
+
+.collection-photo:focus {
+	outline-color: grey;	
+}
+
+.collection-text {
+	font-size: 20px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.collection-year {
+	font-size: 20px;
+	margin-left: 10px;
+}
