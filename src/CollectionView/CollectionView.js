@@ -11,7 +11,7 @@ function renderCollection() {
 		<div className="collection-container" key={index}>
 			<div className="collection-photo-viewer">
 				<div className="collection-photo-background">
-					<img className="collection-photo" src={"/" + collection.photos[this.state.currentPhoto]} alt="fashionable person" onClick={this.pushPhotoForward} onKeyDown={this.decipherKeyDown} tabIndex="2" />
+					<img className="collection-photo" src={collection.photos[this.state.currentPhoto]} alt="fashionable person" onClick={this.pushPhotoForward} onKeyDown={this.decipherKeyDown} tabIndex="2" />
 					<div className="left-arrow-container"><div className="left-arrow" tabIndex="1" onClick={this.pushPhotoBackward} onKeyDown={this.decipherLeftArrow}>{"<"}</div></div>
 					<div className="right-arrow-container"><div className="right-arrow" tabIndex="3" onClick={this.pushPhotoForward} onKeyDown={this.decipherRightArrow}>{">"}</div></div>
 					<div className="collection-counter">{this.state.currentPhoto + 1}/{collection.photos.length}</div>
