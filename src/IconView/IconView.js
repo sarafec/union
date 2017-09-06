@@ -8,7 +8,7 @@ function renderCollectionList(){
 	if (this.state.currentlyDisplayed) {
 		return this.state.currentlyDisplayed.map((collection, index) =>
 			<div className="icon-entry" key={index}>
-				<Link to={`/collection/${collection.search}`}><img className="icon-image" src={collection.photos[0]} alt="from collection" /></Link>
+				<Link to={`/union/collection/${collection.search}`}><img className="icon-image" src={collection.photos[0]} alt="from collection" /></Link>
 				<div className="icon-text">{collection.company[0]} x {collection.company[1]}</div>
 			</div>
 		);
