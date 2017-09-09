@@ -67,7 +67,7 @@
 	margin: 0 auto;
 	max-height: 330px;
 	max-width: 100%;
-	padding-top: 10px;
+	margin-top: 10px;
 }
 
 .collection-photo:focus {
