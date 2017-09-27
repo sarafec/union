@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './IconView.css';
 import collections from '../data.json';
 
-
+//render icon list
 function renderCollectionList(){
 	if (this.state.currentlyDisplayed) {
 		return this.state.currentlyDisplayed.map((collection, index) =>
@@ -15,11 +15,13 @@ function renderCollectionList(){
 	};
 }
 
+//helper function to filter out duplicates
 function filterUnique(value, index, self){
  	return self.indexOf(value) === index;
 }
 
-
+//render filterable company list based on state's currentlyDisplayed value
+//consider moving out to its own component
 function renderCompanyList(){
 	if (this.state.currentlyDisplayed.length === 0) {
 		return (<div></div>);
@@ -41,7 +43,7 @@ function renderCompanyList(){
 }
 
 
-
+//render filterable clothing article list based on state's currentlyDisplayed value
 function renderClothingList(){
 	if (this.state.currentlyDisplayed.length === 0) {
 		return (<div></div>);
@@ -90,6 +92,7 @@ class IconView extends Component {
 		this.filterCompany = this.filterCompany.bind(this);
 	}
 
+	//update component's state based on search input
 	onSearch(evt) {
 		let newIconList = collections.filter((iconEntry) =>
 			iconEntry.search.includes(evt.target.value.toLowerCase()));
@@ -104,6 +107,7 @@ class IconView extends Component {
 		this.createCompanyList();
 	}
 
+	//update component's state based on filter input
 	filterType(evt){
 		let filteredList = this.state.currentlyDisplayed.filter((entry) => 
 			!entry.type.includes(evt.target.id)
@@ -120,6 +124,7 @@ class IconView extends Component {
 
 	}
 
+	//update component's state based on filter input
 	filterCompany(evt){
 		let filteredList = this.state.currentlyDisplayed.filter((entry) => 
 			!entry.company.includes(evt.target.id)
@@ -135,6 +140,8 @@ class IconView extends Component {
 		}, 50);
 	}
 
+	//update state value to be filtered for duplicate values
+	//can we cut down on duplicate code between createCompanyList and createClothingList
 	createCompanyList(){
 		let allCompanyList = this.state.currentlyDisplayed.map((entry) =>
 			entry.company
@@ -148,6 +155,7 @@ class IconView extends Component {
 		
 	}
 
+	//update state value to be filtered for duplicate values
 	createClothingList(){
 		let allClothingTypeList = this.state.currentlyDisplayed.map((entry) =>
 			entry.type
@@ -161,6 +169,8 @@ class IconView extends Component {
 
 	}
 
+	//create initial clothing list for side menu
+	//leverage initial state lifecycle methods instead?
 	initialClothingList(){
 		let allClothingTypeList = collections.map((entry) =>
 			entry.type
@@ -171,6 +181,7 @@ class IconView extends Component {
 		return uniqueClothingList;
 	}
 
+	//create initial clothing list for side menu
 	initialCompanyList() {
 		let allCompanyList = collections.map((entry) =>
 				entry.company
@@ -188,7 +199,7 @@ class IconView extends Component {
     	<div className="visual-header">
     	<header className="main-header">
     		<h1 className="main-title">Union</h1>
-        	<h3 className="main-subtitle">A Fashion Collboration Catalog</h3>
+        	<h3 className="main-subtitle">A Fashion Collaboration Catalog</h3>
     	</header>
     	<input className="main-search" type="search" onChange={this.onSearch} />
     	</div>

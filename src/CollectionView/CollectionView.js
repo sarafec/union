@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import collections from '../data.json';
 import './CollectionView.css';
 
+//render photo list
 function renderCollection() {
 	let collectionIdentifier = this.relativePathName.split("/")[3];
 	let targetCollection = collections.filter(function(x){
@@ -25,6 +26,7 @@ function renderCollection() {
 	);
 }
 
+//identify collection based on url
 function identifyCollection(){
 	let collectionIdentifier = this.relativePathName.split("/")[3];
 	let targetCollection = collections.filter(function(x){
@@ -37,6 +39,7 @@ function identifyCollection(){
 
 };
 
+//event handler response to move forward 
 function pushPhotoForward(){
 		if(!this.state.currentCollection){
 			this.identifyCollection();
@@ -51,6 +54,7 @@ function pushPhotoForward(){
 
 }
 
+//event handler response to move backward 
 function pushPhotoBackward(){
 	if(this.state.currentPhoto > 0){
 		this.setState({
@@ -77,6 +81,7 @@ class CollectionView extends Component {
 		this.decipherRightArrow = this.decipherRightArrow.bind(this);
 	}
 
+	//decide which button has been pushed
 	decipherKeyDown(evt) {
 		if(evt.which === 13){
 			this.pushPhotoForward();
