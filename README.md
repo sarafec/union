@@ -1,3 +1,3 @@
 ### Union
   
-This project was built using React and JavaScript.
+This repository contains a fashion collaboration catalog built using React and react-router.
